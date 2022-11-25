@@ -87,13 +87,18 @@ while achar_img_tela('sem_mais_tratados.png') is None:
         apertar('enter')
         tempo(1)
         press_junto('alt', 't')
-        while achar_img_tela('botao_ok.png') is None or tempo(2):
+        if (achar_img_tela('botao_ok.png') is None) or tempo(2):
             time.sleep(0.25)
-        imagem_clicar('botao_ok.png')
-        while achar_img_tela('botao_ok.png') is None or tempo(2):
+        if achar_img_tela('botao_ok.png') is not None:
+            imagem_clicar('botao_ok.png')
+        else:
+            pass
+        if (achar_img_tela('botao_ok.png') is None) or tempo(2):
             time.sleep(0.25)
-        imagem_clicar('botao_ok.png')
-
+        if achar_img_tela('botao_ok.png') is not None:
+            imagem_clicar('botao_ok.png')
+        else:
+            pass
         while achar_img_tela('botao3pontos.png') is None:
             time.sleep(0.25)
 
